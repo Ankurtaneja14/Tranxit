@@ -73,7 +73,7 @@ export default function OnboardingScreen() {
         {/* Subtle glow behind image */}
         <View style={styles.heroGlow} />
         <Image
-          source={require('@/assets/images/onboarding-bus.png')}
+          source={require('@/assets/images/onboarding-bus.jpg')}
           style={styles.heroImage}
           contentFit="contain"
           transition={500}
