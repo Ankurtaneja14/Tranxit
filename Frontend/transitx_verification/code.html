@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TransitX Haryana - Mobile &amp; OTP Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#bacbb9",
+                        "surface-dim": "#0d150e",
+                        "surface-tint": "#00e475",
+                        "surface-container-lowest": "#081009",
+                        "primary-fixed-dim": "#00e475",
+                        "on-tertiary-container": "#794810",
+                        "on-secondary-fixed": "#001e30",
+                        "inverse-on-surface": "#29332a",
+                        "primary": "#75ff9e",
+                        "on-secondary-container": "#003f5f",
+                        "secondary-fixed": "#cae6ff",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffdec4",
+                        "on-primary": "#003918",
+                        "on-secondary": "#00344f",
+                        "error-container": "#93000a",
+                        "outline": "#859585",
+                        "inverse-surface": "#dbe5d9",
+                        "on-primary-fixed": "#00210b",
+                        "background": "#0d150e",
+                        "surface-container-highest": "#2e372e",
+                        "on-tertiary-fixed": "#2d1600",
+                        "surface-bright": "#323c33",
+                        "surface": "#0d150e",
+                        "surface-container-high": "#232c24",
+                        "surface-variant": "#2e372e",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#3b4a3d",
+                        "primary-container": "#00e676",
+                        "surface-container": "#19221a",
+                        "secondary": "#8dcdff",
+                        "tertiary-fixed-dim": "#fdb878",
+                        "secondary-container": "#00affe",
+                        "on-tertiary": "#4b2800",
+                        "surface-container-low": "#151e16",
+                        "on-background": "#dbe5d9",
+                        "on-primary-fixed-variant": "#005226",
+                        "tertiary-fixed": "#ffdcbf",
+                        "on-tertiary-fixed-variant": "#6a3c03",
+                        "on-secondary-fixed-variant": "#004b70",
+                        "tertiary-container": "#ffba79",
+                        "on-surface": "#dbe5d9",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "secondary-fixed-dim": "#8dcdff",
+                        "inverse-primary": "#006d35",
+                        "on-error": "#690005"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "32px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "48px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "title-md": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "label-caps": ["JetBrains Mono", "monospace"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Neo-Glassmorphism Custom Styles */
+        body {
+            background-color: #0A0D12;
+            color: #FFFFFF;
+        }
+        .glass-panel {
+            background: rgba(30, 38, 56, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-button {
+            background: rgba(30, 38, 56, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-slate { color: #94A3B8; }
+        .text-cyan { color: #00B0FF; }
+        .bg-cyan { background-color: #00B0FF; }
+        .border-cyan { border-color: #00B0FF; }
+        .glow-cyan { box-shadow: 0 0 15px rgba(0, 176, 255, 0.3); }
+        .glow-primary { box-shadow: 0 0 15px rgba(0, 230, 118, 0.3); }
+        
+        /* Cursor Animation */
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .cursor-blink { animation: blink 1s step-end infinite; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex items-center justify-center bg-[#0A0D12] overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Mobile Device Container (390x844 layout simulation) -->
+<main class="w-full h-[100dvh] max-w-[390px] mx-auto relative flex flex-col sm:h-[844px] sm:rounded-[3rem] sm:border-[8px] sm:border-[#1E2638] overflow-hidden bg-[#0A0D12] shadow-2xl">
+<!-- Ambient Background Glow -->
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-container rounded-full blur-[100px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary-container rounded-full blur-[100px]"></div>
+</div>
+<!-- Top Bar -->
+<header class="w-full flex items-center justify-between px-margin-mobile pt-[54px] pb-2 relative z-10">
+<button class="w-9 h-9 rounded-full flex items-center justify-center glass-button text-on-surface hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<h1 class="font-title-md text-title-md text-white">Sign In or Register</h1>
+<div class="w-9 h-9"></div> <!-- Spacer for centering -->
+</header>
+<!-- Progress Indicator -->
+<div class="w-full h-0.5 bg-[#1E2638] relative z-10 mt-md">
+<div class="absolute top-0 left-0 h-full w-1/2 bg-primary-container"></div>
+</div>
+<div class="flex-1 flex flex-col px-margin-mobile pt-lg pb-margin-mobile relative z-10 overflow-y-auto hide-scrollbar">
+<!-- Header Section -->
+<div class="flex flex-col gap-sm mb-xl">
+<div class="w-12 h-12 rounded-[12px] glass-panel flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-secondary-container">smartphone</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white tracking-tighter">Enter Mobile Number</h2>
+<p class="font-body-sm text-body-sm text-slate">We'll send a 4-digit verification code to confirm your identity.</p>
+</div>
+<!-- Phone Input Section -->
+<div class="glass-panel h-14 rounded-lg flex items-center px-4 mb-xl">
+<div class="flex items-center gap-2 border-r border-white/10 pr-4 mr-4">
+<span class="text-[15px] font-bold text-white">🇮🇳 +91</span>
+</div>
+<input class="flex-1 bg-transparent border-none outline-none font-label-caps text-[17px] text-white placeholder-[#64748B] p-0 focus:ring-0" placeholder="98765 43210" type="tel" value="98765 43210"/>
+</div>
+<!-- OTP Section -->
+<div class="flex flex-col gap-md">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label-caps text-[11px] text-primary-container mb-1">VERIFICATION CODE</p>
+<p class="font-body-sm text-[13px] text-slate">
+                            Sent to +91 98765 43210
+                            <button class="text-cyan ml-1 hover:underline focus:outline-none">Edit</button>
+</p>
+</div>
+</div>
+<div class="flex justify-between gap-3 mt-xs">
+<!-- Box 1 Filled -->
+<div class="w-16 h-16 rounded-[12px] bg-[#1E2638] border-2 border-primary-container flex items-center justify-center">
+<span class="font-headline-lg-mobile text-[24px] text-white">7</span>
+</div>
+<!-- Box 2 Filled -->
+<div class="w-16 h-16 rounded-[12px] bg-[#1E2638] border-2 border-primary-container flex items-center justify-center">
+<span class="font-headline-lg-mobile text-[24px] text-white">3</span>
+</div>
+<!-- Box 3 Active -->
+<div class="w-16 h-16 rounded-[12px] bg-[#1E2638] border-2 border-cyan glow-cyan flex items-center justify-center relative">
+<span class="text-cyan font-headline-lg-mobile text-[24px] cursor-blink">|</span>
+</div>
+<!-- Box 4 Empty -->
+<div class="w-16 h-16 rounded-[12px] bg-[#1E2638] border border-white/10 flex items-center justify-center">
+<span class="text-white/20 text-[24px]">-</span>
+</div>
+</div>
+<!-- Resend Action -->
+<div class="mt-xs">
+<span class="font-body-sm text-[13px] text-slate">Didn't receive code? </span>
+<button class="font-body-sm text-[13px] font-bold text-cyan hover:opacity-80 transition-opacity">Resend in 00:24</button>
+</div>
+</div>
+<!-- Spacer to push bottom content down -->
+<div class="flex-1 min-h-[40px]"></div>
+<!-- Action Section (Fixed Bottom in mobile flow) -->
+<div class="mt-auto flex flex-col gap-4 pb-6">
+<button class="w-full h-14 bg-primary-container hover:bg-primary transition-colors rounded-[28px] flex items-center justify-center glow-primary active:scale-[0.98]">
+<span class="font-title-md text-[17px] text-[#0A0D12]">Verify &amp; Continue</span>
+</button>
+<p class="font-body-sm text-[12px] text-center text-[#64748B] px-4">
+                    By continuing, you agree to our Terms of Service and Privacy Policy.
+                </p>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full z-50 pointer-events-none"></div>
+</main>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

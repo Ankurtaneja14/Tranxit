@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TransitX Haryana - Passes &amp; Subscriptions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#232c24",
+                      "on-background": "#dbe5d9",
+                      "surface-bright": "#323c33",
+                      "outline": "#859585",
+                      "surface-dim": "#0d150e",
+                      "tertiary-fixed": "#ffdcbf",
+                      "surface-variant": "#2e372e",
+                      "surface-container-low": "#151e16",
+                      "inverse-surface": "#dbe5d9",
+                      "secondary-fixed-dim": "#8dcdff",
+                      "on-error": "#690005",
+                      "primary-container": "#00e676",
+                      "inverse-on-surface": "#29332a",
+                      "on-secondary": "#00344f",
+                      "on-secondary-container": "#003f5f",
+                      "surface-container-lowest": "#081009",
+                      "primary-fixed-dim": "#00e475",
+                      "on-primary-container": "#00612e",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-highest": "#2e372e",
+                      "tertiary-container": "#ffba79",
+                      "secondary-container": "#00affe",
+                      "tertiary-fixed-dim": "#fdb878",
+                      "background": "#0d150e",
+                      "on-secondary-fixed": "#001e30",
+                      "primary": "#75ff9e",
+                      "on-surface-variant": "#bacbb9",
+                      "on-primary-fixed-variant": "#005226",
+                      "error": "#ffb4ab",
+                      "secondary-fixed": "#cae6ff",
+                      "primary-fixed": "#62ff96",
+                      "on-surface": "#dbe5d9",
+                      "on-tertiary-container": "#794810",
+                      "on-primary-fixed": "#00210b",
+                      "error-container": "#93000a",
+                      "surface-container": "#19221a",
+                      "on-primary": "#003918",
+                      "on-tertiary-fixed": "#2d1600",
+                      "surface": "#0d150e",
+                      "inverse-primary": "#006d35",
+                      "on-secondary-fixed-variant": "#004b70",
+                      "on-tertiary-fixed-variant": "#6a3c03",
+                      "secondary": "#8dcdff",
+                      "outline-variant": "#3b4a3d",
+                      "tertiary": "#ffdec4",
+                      "on-tertiary": "#4b2800",
+                      "surface-tint": "#00e475"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "sm": "8px",
+                      "margin-mobile": "20px",
+                      "unit": "4px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "xl": "32px",
+                      "margin-desktop": "48px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #0A0D12;
+            color: #dbe5d9;
+            /* Fallback for background */
+            background-image: radial-gradient(circle at top right, rgba(0, 230, 118, 0.05), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(0, 176, 255, 0.05), transparent 40%);
+            background-attachment: fixed;
+        }
+        
+        .glass-card {
+            background: rgba(30, 38, 56, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-hover:hover {
+            background: rgba(30, 38, 56, 0.9);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glow-primary {
+            box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
+        }
+        
+        .glow-secondary {
+            box-shadow: 0 0 15px rgba(0, 176, 255, 0.3);
+        }
+
+        .virtual-card-gradient {
+            background: linear-gradient(135deg, rgba(30, 38, 56, 0.9), rgba(10, 46, 35, 0.9));
+        }
+        
+        /* Hide scrollbar for tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex justify-center bg-black">
+<!-- Mobile Device Container -->
+<div class="w-full max-w-[390px] h-screen max-h-[844px] bg-[#0A0D12] relative overflow-hidden flex flex-col mx-auto shadow-2xl border-x border-white/5 md:my-8 md:rounded-[40px] md:h-[844px] md:border-y md:border-white/10">
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 w-full max-w-[390px] z-50 transition-all duration-300 ease-in-out bg-surface-dim/70 backdrop-blur-xl border-b border-white/5 shadow-[0_0_15px_rgba(117,255,158,0.1)]">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full z-50">
+<button class="text-on-surface-variant hover:bg-white/5 p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface text-center flex-1 truncate">Commuter Passes</h1>
+<button class="text-primary hover:bg-white/5 p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto pt-20 pb-24 px-margin-mobile flex flex-col gap-xl">
+<!-- Active Pass Hero -->
+<section class="flex flex-col gap-sm">
+<div class="virtual-card-gradient rounded-DEFAULT border border-primary/50 glow-primary p-lg relative overflow-hidden h-[180px] flex flex-col justify-between">
+<!-- Abstract Background Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#75ff9e 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="flex justify-between items-start z-10">
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-primary opacity-90 tracking-widest">HARYANA E-BUS PASS</span>
+<h2 class="font-title-md text-title-md text-on-surface font-bold mt-1">ALL-CITY MONTHLY UNLIMITED</h2>
+</div>
+<div class="bg-secondary/20 border border-secondary/30 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">nfc</span>
+<span class="font-label-caps text-label-caps text-secondary text-[10px]">NCMC ENABLED</span>
+</div>
+</div>
+<div class="flex justify-between items-end z-10">
+<div class="flex flex-col gap-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ankur Taneja</span>
+<span class="font-label-caps text-label-caps text-on-surface opacity-70">EXP: 15-SEP-2026</span>
+</div>
+<div class="bg-white/10 p-2 rounded-lg backdrop-blur-md border border-white/20 flex items-center justify-center cursor-pointer hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface text-[32px]">qr_code_2</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tabs -->
+<section>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+<button class="px-4 py-2 rounded-full bg-primary/20 border border-primary text-primary font-label-caps text-label-caps whitespace-nowrap flex-shrink-0 glow-primary">
+                        Active Pass (1)
+                    </button>
+<button class="px-4 py-2 rounded-full glass-card text-on-surface-variant font-label-caps text-label-caps whitespace-nowrap flex-shrink-0 hover:text-on-surface transition-colors">
+                        Available Passes
+                    </button>
+<button class="px-4 py-2 rounded-full glass-card text-on-surface-variant font-label-caps text-label-caps whitespace-nowrap flex-shrink-0 hover:text-on-surface transition-colors">
+                        Expired History
+                    </button>
+</div>
+</section>
+<!-- Pass Packages -->
+<section class="flex flex-col gap-md pb-md">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant tracking-widest">EXPLORE COMMUTER SAVINGS PACKAGES</h3>
+<!-- Package Card 1 -->
+<div class="glass-card rounded-DEFAULT p-md flex flex-col gap-md glass-card-hover transition-all">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider font-label-caps">Student</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">30-Day City Student Unlimited</h4>
+</div>
+<div class="text-right flex flex-col">
+<span class="font-title-md text-title-md text-primary font-bold">₹299</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">/mo</span>
+</div>
+</div>
+<div class="w-full h-px bg-white/5 my-1"></div>
+<div class="flex justify-between items-center">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">directions_bus</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Valid on all city routes</span>
+</div>
+<button class="bg-primary hover:bg-primary-fixed text-on-primary font-title-md text-body-sm font-bold py-1.5 px-4 rounded-full glow-primary transition-colors">
+                            Apply
+                        </button>
+</div>
+</div>
+<!-- Package Card 2 -->
+<div class="glass-card rounded-DEFAULT p-md flex flex-col gap-md glass-card-hover transition-all">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider font-label-caps">Weekly 10-Trip</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Panipat ➔ Gurugram Express Pass</h4>
+</div>
+<div class="text-right flex flex-col">
+<span class="font-title-md text-title-md text-primary font-bold">₹120</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">/wk</span>
+</div>
+</div>
+<div class="w-full h-px bg-white/5 my-1"></div>
+<div class="flex justify-between items-center">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">route</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Specific Route Only</span>
+</div>
+<button class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-on-surface font-title-md text-body-sm font-bold py-1.5 px-4 rounded-full transition-colors">
+                            Buy Pass
+                        </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (From JSON) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface-dim/80 backdrop-blur-2xl rounded-t-lg border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">explore</span>
+<span class="font-label-caps text-label-caps">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl py-1 px-4 shadow-[0_0_10px_rgba(117,255,158,0.2)] hover:opacity-100 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-label-caps text-label-caps">My Passes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+<span class="font-label-caps text-label-caps">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<!-- Home Indicator Safe Area (iOS style) -->
+<div class="h-8 w-full fixed bottom-0 flex justify-center items-end pb-2 pointer-events-none z-50">
+<div class="w-1/3 h-1 bg-white/20 rounded-full"></div>
+</div>
+</div>
+</body></html>

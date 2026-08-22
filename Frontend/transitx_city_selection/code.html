@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TransitX Haryana - Location Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#75ff9e",
+                        "on-primary-fixed-variant": "#005226",
+                        "surface-container-high": "#232c24",
+                        "on-surface-variant": "#bacbb9",
+                        "on-surface": "#dbe5d9",
+                        "surface-bright": "#323c33",
+                        "surface-container-low": "#151e16",
+                        "on-primary-fixed": "#00210b",
+                        "surface-dim": "#0d150e",
+                        "background": "#0d150e",
+                        "tertiary-fixed": "#ffdcbf",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-container": "#00612e",
+                        "surface": "#0d150e",
+                        "tertiary-container": "#ffba79",
+                        "on-primary": "#003918",
+                        "on-tertiary-fixed": "#2d1600",
+                        "tertiary-fixed-dim": "#fdb878",
+                        "primary-fixed": "#62ff96",
+                        "surface-variant": "#2e372e",
+                        "on-secondary-fixed": "#001e30",
+                        "on-secondary-container": "#003f5f",
+                        "on-secondary": "#00344f",
+                        "on-tertiary": "#4b2800",
+                        "on-tertiary-container": "#794810",
+                        "surface-container-highest": "#2e372e",
+                        "surface-tint": "#00e475",
+                        "primary-container": "#00e676",
+                        "secondary-fixed-dim": "#8dcdff",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#00affe",
+                        "secondary-fixed": "#cae6ff",
+                        "tertiary": "#ffdec4",
+                        "inverse-primary": "#006d35",
+                        "on-background": "#dbe5d9",
+                        "inverse-on-surface": "#29332a",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-surface": "#dbe5d9",
+                        "secondary": "#8dcdff",
+                        "on-secondary-fixed-variant": "#004b70",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#00e475",
+                        "error": "#ffb4ab",
+                        "outline": "#859585",
+                        "surface-container": "#19221a",
+                        "on-tertiary-fixed-variant": "#6a3c03"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "lg": "24px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-surface {
+            background: rgba(30, 38, 56, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-surface:hover, .glass-surface:active {
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .glow-accent {
+            box-shadow: 0 0 15px rgba(117, 255, 158, 0.3);
+        }
+        
+        @keyframes pulse-radar {
+            0% { box-shadow: 0 0 0 0 rgba(117, 255, 158, 0.4); transform: scale(1); }
+            70% { box-shadow: 0 0 0 10px rgba(117, 255, 158, 0); transform: scale(1.05); }
+            100% { box-shadow: 0 0 0 0 rgba(117, 255, 158, 0); transform: scale(1); }
+        }
+        
+        .radar-pulse {
+            animation: pulse-radar 2s infinite;
+        }
+
+        .neo-gradient {
+            background: radial-gradient(circle at top right, rgba(0, 228, 117, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(0, 175, 254, 0.05) 0%, transparent 40%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden selection:bg-primary/30 selection:text-primary min-h-screen flex items-center justify-center neo-gradient">
+<!-- Mobile Device Container -->
+<main class="w-full max-w-[390px] h-screen max-h-[844px] flex flex-col relative bg-[#0A0D12] overflow-hidden shadow-2xl md:rounded-[3rem] md:border border-white/5 md:h-[844px] md:my-8 mx-auto">
+<!-- TopAppBar (Transactional - Hidden Navigation Shells, Custom Top Bar) -->
+<header class="flex flex-col w-full z-50 bg-[#0A0D12]/90 backdrop-blur-xl shrink-0">
+<div class="flex justify-between items-center px-margin-mobile py-sm h-16">
+<button aria-label="Go Back" class="w-10 h-10 rounded-full bg-[#1E2638] border border-white/10 flex items-center justify-center text-on-surface-variant hover:bg-white/5 active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-title-md text-title-md text-on-surface absolute left-1/2 transform -translate-x-1/2">Location Setup</h1>
+<div class="w-10 h-10"></div> <!-- Spacer for centering -->
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-[2px] bg-white/5">
+<div class="h-full bg-[#00E676] w-full" style="box-shadow: 0 0 10px rgba(0,230,118,0.5);"></div>
+</div>
+</header>
+<!-- Main Canvas content -->
+<div class="flex-1 overflow-y-auto px-margin-mobile pb-[120px] pt-xl flex flex-col gap-xl hide-scrollbar">
+<!-- Header Section -->
+<section class="flex flex-col gap-sm">
+<div class="inline-flex items-center self-start px-3 py-1 rounded-full bg-[#1E2638] border border-secondary-container/50">
+<span class="font-label-caps text-label-caps text-secondary-container tracking-widest uppercase">STEP 2 OF 2 • LOCATION</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Select Your City</h2>
+<p class="font-body-sm text-body-sm text-[#94A3B8]">Choose your primary commuting hub to personalize real-time route data and smart card settings.</p>
+</section>
+<!-- GPS Card -->
+<button class="w-full h-[72px] rounded-DEFAULT glass-surface border-primary-container flex items-center px-md gap-md active:scale-[0.98] transition-transform text-left">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 border border-primary-container/30 flex items-center justify-center radar-pulse shrink-0">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-title-md text-[16px] leading-tight text-white mb-xs">Use Current Location</span>
+<span class="font-body-sm text-[12px] leading-none text-primary-container">Detected: Panipat, Haryana</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#00210b] text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</button>
+<!-- City Grid Section -->
+<section class="flex flex-col gap-md">
+<span class="font-label-caps text-[11px] leading-[16px] text-[#64748B] tracking-widest uppercase">OR CHOOSE FROM SUPPORTED CITIES</span>
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Selected City -->
+<button class="h-[80px] rounded-DEFAULT glass-surface border-primary-container bg-primary-container/5 flex flex-col justify-center px-md text-left active:scale-[0.98] transition-transform">
+<span class="font-title-md text-[16px] text-white">Panipat</span>
+<span class="font-body-sm text-[12px] text-primary/70">12 E-Bus Routes</span>
+</button>
+<!-- Other Cities -->
+<button class="h-[80px] rounded-DEFAULT glass-surface flex flex-col justify-center px-md text-left active:scale-[0.98] transition-transform">
+<span class="font-title-md text-[16px] text-on-surface">Gurugram</span>
+<span class="font-body-sm text-[12px] text-[#94A3B8]">45 E-Bus Routes</span>
+</button>
+<button class="h-[80px] rounded-DEFAULT glass-surface flex flex-col justify-center px-md text-left active:scale-[0.98] transition-transform">
+<span class="font-title-md text-[16px] text-on-surface">Ambala</span>
+<span class="font-body-sm text-[12px] text-[#94A3B8]">8 E-Bus Routes</span>
+</button>
+<button class="h-[80px] rounded-DEFAULT glass-surface flex flex-col justify-center px-md text-left active:scale-[0.98] transition-transform">
+<span class="font-title-md text-[16px] text-on-surface">Karnal</span>
+<span class="font-body-sm text-[12px] text-[#94A3B8]">14 E-Bus Routes</span>
+</button>
+<button class="h-[80px] rounded-DEFAULT glass-surface flex flex-col justify-center px-md text-left active:scale-[0.98] transition-transform">
+<span class="font-title-md text-[16px] text-on-surface">Rohtak</span>
+<span class="font-body-sm text-[12px] text-[#94A3B8]">10 E-Bus Routes</span>
+</button>
+<button class="h-[80px] rounded-DEFAULT glass-surface flex flex-col justify-center px-md text-left active:scale-[0.98] transition-transform">
+<span class="font-title-md text-[16px] text-on-surface">Hisar</span>
+<span class="font-body-sm text-[12px] text-[#94A3B8]">15 E-Bus Routes</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Bottom Fixed Area -->
+<div class="absolute bottom-0 w-full px-margin-mobile pb-8 pt-4 bg-gradient-to-t from-[#0A0D12] via-[#0A0D12]/90 to-transparent flex flex-col gap-sm items-center z-10">
+<button class="w-full h-14 rounded-full bg-gradient-to-r from-primary to-[#00c960] text-on-primary-fixed-variant font-title-md text-title-md flex items-center justify-center gap-2 glow-accent active:scale-[0.98] transition-transform">
+<span>Confirm &amp; Launch TransitX</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</button>
+<p class="font-body-sm text-[12px] text-[#64748B] text-center w-full max-w-[280px]">Location data is used strictly for routing and real-time ETAs.</p>
+<!-- iOS Home Indicator -->
+<div class="w-[134px] h-[5px] bg-white/30 rounded-full mt-2"></div>
+</div>
+</main>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</body></html>

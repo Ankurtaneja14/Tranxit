@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TransitX Haryana - Route Comparison</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#0d150e",
+                        "on-tertiary-fixed": "#2d1600",
+                        "surface-container-low": "#151e16",
+                        "inverse-primary": "#006d35",
+                        "surface-container-lowest": "#081009",
+                        "on-tertiary-container": "#794810",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-surface": "#dbe5d9",
+                        "on-surface-variant": "#bacbb9",
+                        "on-primary-container": "#00612e",
+                        "outline": "#859585",
+                        "on-primary": "#003918",
+                        "primary-fixed": "#62ff96",
+                        "surface-variant": "#2e372e",
+                        "on-tertiary": "#4b2800",
+                        "on-secondary-container": "#003f5f",
+                        "surface-bright": "#323c33",
+                        "primary": "#75ff9e",
+                        "on-secondary-fixed": "#001e30",
+                        "on-tertiary-fixed-variant": "#6a3c03",
+                        "tertiary-fixed": "#ffdcbf",
+                        "inverse-on-surface": "#29332a",
+                        "surface-container-high": "#232c24",
+                        "surface-tint": "#00e475",
+                        "surface-container-highest": "#2e372e",
+                        "on-primary-fixed-variant": "#005226",
+                        "secondary-container": "#00affe",
+                        "inverse-surface": "#dbe5d9",
+                        "primary-container": "#00e676",
+                        "surface-dim": "#0d150e",
+                        "on-primary-fixed": "#00210b",
+                        "tertiary-container": "#ffba79",
+                        "tertiary-fixed-dim": "#fdb878",
+                        "on-secondary": "#00344f",
+                        "secondary-fixed": "#cae6ff",
+                        "outline-variant": "#3b4a3d",
+                        "secondary": "#8dcdff",
+                        "on-background": "#dbe5d9",
+                        "tertiary": "#ffdec4",
+                        "on-secondary-fixed-variant": "#004b70",
+                        "secondary-fixed-dim": "#8dcdff",
+                        "surface-container": "#19221a",
+                        "surface": "#0d150e",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#00e475"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "sm": "8px",
+                        "unit": "4px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "48px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Inter"],
+                        "title-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 38, 56, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
+        }
+        .glow-emerald-active {
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.5);
+            border-color: #00e676;
+        }
+        
+        /* Custom Scrollbar for tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-sm min-h-screen flex flex-col pb-32">
+<!-- Top Navigation (Task-focused, suppressing global navs) -->
+<header class="sticky top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 px-margin-mobile h-16 flex justify-between items-center">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-white/5 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-title-md text-on-surface">Sector 11 ➔ Model Town</h1>
+<p class="text-xs text-on-surface-variant">3 Available Routes</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-white/5 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">tune</span>
+</button>
+</header>
+<!-- Sort Tabs -->
+<div class="w-full px-margin-mobile py-sm sticky top-16 z-40 bg-background/90 backdrop-blur-md">
+<div class="flex space-x-2 overflow-x-auto no-scrollbar py-2">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary text-on-primary font-label-caps shadow-[0_0_10px_rgba(0,230,118,0.3)] shrink-0">
+                RECOMMENDED
+            </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full glass-panel text-on-surface-variant font-label-caps shrink-0 hover:border-white/20 transition-colors">
+                FASTEST
+            </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full glass-panel text-on-surface-variant font-label-caps shrink-0 hover:border-white/20 transition-colors">
+                CHEAPEST
+            </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full glass-panel text-on-surface-variant font-label-caps shrink-0 hover:border-white/20 transition-colors">
+                LEAST WALKING
+            </button>
+</div>
+</div>
+<!-- Main Content: Route Cards -->
+<main class="flex-1 px-margin-mobile py-lg space-y-gutter w-full max-w-3xl mx-auto">
+<!-- Option A (Selected) -->
+<article class="glass-panel rounded-lg p-lg relative overflow-hidden glow-emerald-active border-primary cursor-pointer active:scale-[0.98] transition-transform">
+<!-- Badge -->
+<div class="absolute top-0 left-0 bg-primary/20 border-b border-r border-primary/30 px-3 py-1 rounded-br-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-caps text-primary text-[10px]">BEST VALUE • DIRECT</span>
+</div>
+<div class="mt-4 flex justify-between items-start mb-6">
+<div>
+<div class="text-3xl font-extrabold text-on-surface leading-none tracking-tight">14 mins</div>
+<div class="text-sm text-on-surface-variant mt-1">Arrives 10:45 AM</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-bold text-on-surface">₹15</div>
+</div>
+</div>
+<!-- Transit Visual Flow -->
+<div class="flex items-center gap-2 mb-6">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">directions_walk</span>
+<span class="text-[10px] text-on-surface-variant">2m</span>
+</div>
+<div class="h-0.5 w-6 bg-surface-variant"></div>
+<div class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-caps flex items-center gap-1 shadow-[0_0_10px_rgba(0,230,118,0.3)]">
+<span class="material-symbols-outlined text-sm">directions_bus</span>
+                    E-102
+                </div>
+<div class="h-0.5 w-6 bg-surface-variant"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">directions_walk</span>
+<span class="text-[10px] text-on-surface-variant">1m</span>
+</div>
+</div>
+<!-- Insights -->
+<div class="flex gap-4 border-t border-white/5 pt-4">
+<div class="flex items-center gap-1.5 text-primary">
+<div class="w-2 h-2 rounded-full bg-primary glow-emerald"></div>
+<span class="text-xs font-semibold">Low Crowd</span>
+</div>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span class="text-xs font-semibold">120g CO2 Saved</span>
+</div>
+</div>
+</article>
+<!-- Option B -->
+<article class="glass-panel rounded-lg p-lg relative overflow-hidden cursor-pointer active:scale-[0.98] transition-transform hover:border-white/20">
+<!-- Badge -->
+<div class="absolute top-0 left-0 bg-secondary/10 border-b border-r border-secondary/20 px-3 py-1 rounded-br-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">electric_rickshaw</span>
+<span class="font-label-caps text-secondary text-[10px]">E-BUS + E-RICKSHAW</span>
+</div>
+<div class="mt-4 flex justify-between items-start mb-6">
+<div>
+<div class="text-3xl font-bold text-on-surface leading-none tracking-tight">11 mins</div>
+<div class="text-sm text-primary mt-1 font-semibold">3m faster</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-bold text-on-surface">₹25</div>
+</div>
+</div>
+<!-- Transit Visual Flow -->
+<div class="flex items-center gap-2 mb-2 flex-wrap">
+<div class="bg-surface-variant text-on-surface px-3 py-1 rounded-full font-label-caps flex items-center gap-1 border border-white/5">
+<span class="material-symbols-outlined text-sm">directions_bus</span>
+                    E-Express 4
+                </div>
+<div class="h-0.5 w-4 bg-surface-variant"></div>
+<div class="bg-secondary/20 text-secondary border border-secondary/30 px-3 py-1 rounded-full font-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">electric_rickshaw</span>
+                    Leg
+                </div>
+<div class="h-0.5 w-4 bg-surface-variant"></div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">location_on</span>
+</div>
+</article>
+<!-- Option C -->
+<article class="glass-panel rounded-lg p-lg relative overflow-hidden cursor-pointer active:scale-[0.98] transition-transform hover:border-white/20 opacity-80">
+<!-- Badge -->
+<div class="absolute top-0 left-0 bg-surface-variant/50 border-b border-r border-white/10 px-3 py-1 rounded-br-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">savings</span>
+<span class="font-label-caps text-on-surface-variant text-[10px]">MAX SAVINGS</span>
+</div>
+<div class="mt-4 flex justify-between items-start mb-4">
+<div>
+<div class="text-3xl font-bold text-on-surface leading-none tracking-tight">22 mins</div>
+<div class="text-sm text-on-surface-variant mt-1">Includes 800m walking</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-bold text-primary">₹10</div>
+</div>
+</div>
+</article>
+</main>
+<!-- Fixed Footer -->
+<div class="fixed bottom-0 w-full z-50 bg-surface-container/90 backdrop-blur-2xl border-t border-white/5 rounded-t-lg pt-4 pb-8 px-margin-mobile shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+<div class="max-w-3xl mx-auto flex justify-between items-center">
+<div>
+<div class="font-title-md text-on-surface">Route E-102</div>
+<div class="text-sm text-on-surface-variant">14 mins • ₹15 total fare</div>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-fixed-dim text-on-primary font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(0,230,118,0.3)] hover:opacity-90 active:scale-95 transition-all">
+                Select &amp; Track
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- iOS Home Indicator -->
+<div class="w-1/3 h-1 bg-white/20 rounded-full mx-auto mt-6"></div>
+</div>
+</body></html>

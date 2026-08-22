@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>TransitX Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#75ff9e",
+                    "on-error-container": "#ffdad6",
+                    "background": "#0d150e",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#8dcdff",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#00612e",
+                    "outline-variant": "#3b4a3d",
+                    "on-secondary-fixed-variant": "#004b70",
+                    "inverse-surface": "#dbe5d9",
+                    "on-secondary": "#00344f",
+                    "secondary-container": "#00affe",
+                    "surface-container-high": "#232c24",
+                    "secondary-fixed": "#cae6ff",
+                    "on-surface-variant": "#bacbb9",
+                    "inverse-primary": "#006d35",
+                    "surface-bright": "#323c33",
+                    "on-background": "#dbe5d9",
+                    "on-primary": "#003918",
+                    "on-surface": "#dbe5d9",
+                    "surface-container-low": "#151e16",
+                    "inverse-on-surface": "#29332a",
+                    "on-tertiary-container": "#794810",
+                    "tertiary": "#ffdec4",
+                    "on-primary-fixed": "#00210b",
+                    "surface-dim": "#0d150e",
+                    "on-secondary-container": "#003f5f",
+                    "surface": "#0d150e",
+                    "tertiary-fixed": "#ffdcbf",
+                    "tertiary-fixed-dim": "#fdb878",
+                    "surface-variant": "#2e372e",
+                    "on-tertiary": "#4b2800",
+                    "primary-container": "#00e676",
+                    "primary-fixed-dim": "#00e475",
+                    "tertiary-container": "#ffba79",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#2e372e",
+                    "outline": "#859585",
+                    "on-tertiary-fixed-variant": "#6a3c03",
+                    "surface-container": "#19221a",
+                    "on-primary-fixed-variant": "#005226",
+                    "surface-tint": "#00e475",
+                    "surface-container-lowest": "#081009",
+                    "secondary": "#8dcdff",
+                    "on-secondary-fixed": "#001e30",
+                    "primary-fixed": "#62ff96",
+                    "on-tertiary-fixed": "#2d1600"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-desktop": "48px",
+                    "xl": "32px",
+                    "margin-mobile": "20px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "gutter": "16px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-caps": [
+                            "JetBrains Mono"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "title-md": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "title-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(circle at 50% 0%, rgba(0, 230, 118, 0.05) 0%, transparent 60%);
+        }
+        .glass-card {
+            background-color: rgba(30, 38, 56, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-primary {
+            box-shadow: 0 0 15px rgba(117, 255, 158, 0.3);
+        }
+        /* Custom scrollbar hide for clean mobile look */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen w-full overflow-hidden flex flex-col font-sans selection:bg-primary/30 antialiased">
+<!-- TopAppBar JSON Component -->
+<header class="fixed top-0 w-full z-50 border-b border-white/10 shadow-[0_0_15px_rgba(117,255,158,0.1)] bg-background/70 backdrop-blur-xl flex items-center justify-between px-margin-mobile h-16">
+<button aria-label="Go back" class="text-on-surface-variant hover:bg-white/5 transition-colors active:scale-95 flex items-center justify-center p-2 -ml-2 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tighter truncate max-w-[200px] text-center">Ticket Checkout</h1>
+<button aria-label="Secure Connection" class="text-primary hover:bg-white/5 transition-colors active:scale-95 flex items-center justify-center p-2 -mr-2 rounded-full">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto mt-16 px-margin-mobile pb-48 pt-sm flex flex-col gap-lg">
+<!-- SSL Trust Badge -->
+<div class="flex items-center justify-center gap-xs text-primary font-label-caps text-label-caps opacity-80">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span>256-BIT SSL SECURE</span>
+</div>
+<!-- Trip Summary Card (Glassmorphic) -->
+<section class="glass-card rounded-[18px] p-gutter flex flex-col gap-gutter">
+<!-- Header Row -->
+<div class="flex justify-between items-center border-b border-white/5 pb-sm">
+<div class="bg-primary/10 border border-primary/20 text-primary px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+                    BUS E-102 • SINGLE
+                </div>
+<span class="text-on-surface-variant font-body-sm text-body-sm bg-white/5 px-2 py-1 rounded">HR-06-EB-101</span>
+</div>
+<!-- Route Info -->
+<div class="flex items-center justify-between py-xs">
+<div class="flex flex-col gap-1 w-2/5">
+<span class="text-on-surface-variant font-label-caps text-label-caps text-[10px]">ORIGIN</span>
+<span class="font-title-md text-title-md text-on-surface leading-tight">Model Town<br/>Junction</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center relative px-2">
+<span class="material-symbols-outlined text-primary mb-1 text-[20px]">directions_bus</span>
+<div class="w-full border-t-[2px] border-dotted border-white/20 relative">
+<div class="absolute -right-1 -top-1.5 w-3 h-3 border-t-[2px] border-r-[2px] border-white/20 rotate-45"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1 w-2/5 text-right">
+<span class="text-on-surface-variant font-label-caps text-label-caps text-[10px]">DESTINATION</span>
+<span class="font-title-md text-title-md text-on-surface leading-tight">Sector 11<br/>Complex</span>
+</div>
+</div>
+<!-- Micro Details Grid -->
+<div class="grid grid-cols-4 gap-2 pt-sm border-t border-white/5">
+<div class="flex flex-col items-center bg-white/5 rounded py-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] mb-1">person</span>
+<span class="font-body-sm text-body-sm text-on-surface">1 Adult</span>
+</div>
+<div class="flex flex-col items-center bg-white/5 rounded py-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] mb-1">calendar_today</span>
+<span class="font-body-sm text-body-sm text-on-surface">21 Aug</span>
+</div>
+<div class="flex flex-col items-center bg-white/5 rounded py-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] mb-1">route</span>
+<span class="font-body-sm text-body-sm text-on-surface">4.2 km</span>
+</div>
+<div class="flex flex-col items-center bg-white/5 rounded py-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] mb-1">schedule</span>
+<span class="font-body-sm text-body-sm text-on-surface">14 min</span>
+</div>
+</div>
+</section>
+<!-- Passenger Selector -->
+<section class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Passengers</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">₹15 per ticket</span>
+</div>
+<div class="flex items-center gap-4 bg-surface-container/50 rounded-full border border-white/10 p-1">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-title-md text-title-md w-4 text-center">1</span>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary-container text-on-primary-container shadow-[0_0_10px_rgba(0,230,118,0.2)]">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</section>
+<!-- Payment Methods -->
+<section class="flex flex-col gap-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2">PAYMENT METHOD</span>
+<!-- Wallet (Selected) -->
+<label class="glass-card rounded-[16px] p-4 flex items-center gap-4 cursor-pointer border-primary bg-primary/5 transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div class="flex-1 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">TransitX Pay Wallet</span>
+<span class="font-body-sm text-body-sm text-primary">Balance: ₹120.00</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center bg-primary/20">
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_#75ff9e]"></div>
+</div>
+</label>
+<!-- UPI -->
+<label class="glass-card rounded-[16px] p-4 flex items-center gap-4 cursor-pointer hover:bg-white/5 transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</div>
+<div class="flex-1 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Instant UPI Pay</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">GPay, PhonePe, Paytm</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white/20"></div>
+</label>
+<!-- NCMC -->
+<label class="glass-card rounded-[16px] p-4 flex items-center gap-4 cursor-pointer hover:bg-white/5 transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<div class="flex-1 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">NCMC Transit Card</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tap to pay with National Card</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white/20"></div>
+</label>
+</section>
+</main>
+<!-- Fixed Footer CTA -->
+<footer class="fixed bottom-0 w-full z-40 bg-surface-dim/90 backdrop-blur-[40px] border-t border-white/10 rounded-t-lg pt-gutter px-margin-mobile pb-[34px] shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Subtotal (1 Ticket)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">₹15.00</span>
+</div>
+<div class="flex items-center justify-between mb-lg border-b border-white/5 pb-sm">
+<span class="font-title-md text-title-md text-on-surface">Total Fare</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">₹15.00</span>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed py-4 rounded-full font-title-md text-title-md flex items-center justify-center gap-2 glow-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            Pay ₹15.00 &amp; Generate Ticket
+        </button>
+<!-- iOS Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-white/30 rounded-full"></div>
+</footer>
+</body></html>
